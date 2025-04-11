@@ -23,10 +23,6 @@ class InstaAPIRepository {
   final dio = Dio();
   late final CacheOptions cacheOption;
 
-  // ..interceptors.add(LogInterceptor())
-  // ..httpClientAdapter = Http2Adapter(
-  //   ConnectionManager(idleTimeout: const Duration(seconds: 1)),
-  // );
   IsarCacheStore? cacheStore;
 
   Future<void> initialise() async {
@@ -37,6 +33,12 @@ class InstaAPIRepository {
       policy: CachePolicy.request,
       store: cacheStore,
       hitCacheOnNetworkFailure: true,
+      hitCacheOnErrorCodes: [
+        500,
+        502,
+        503,
+        504,
+      ],
       maxStale: const Duration(days: 7),
       priority: CachePriority.normal,
       keyBuilder: ({headers, required url}) {
@@ -56,7 +58,7 @@ class InstaAPIRepository {
     try {
       var options = {
         '@cache_options@': cacheOption.copyWith(
-          policy: refresh ? CachePolicy.refresh : CachePolicy.refreshForceCache,
+          policy: refresh ? CachePolicy.refresh : CachePolicy.request,
         )
       };
       return apiService.getAllPost(extras: options);
@@ -72,7 +74,7 @@ class InstaAPIRepository {
     try {
       var options = {
         '@cache_options@':  cacheOption.copyWith(
-          policy: refresh ? CachePolicy.refresh : CachePolicy.refreshForceCache,
+          policy: refresh ? CachePolicy.refresh : CachePolicy.request,
           priority: CachePriority.low,
         )
       };

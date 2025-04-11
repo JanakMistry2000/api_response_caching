@@ -20,7 +20,7 @@ class _FeedListState extends State<FeedList> {
   }
 
   Future<void> fetchData({bool refresh = false}) async {
-    print('Fetching data...');
+    debugPrint('Fetching data...');
     final data = await InstaAPIRepository.instance.getAllPost(refresh: refresh);
     setState(() {
       post = data ?? [];
