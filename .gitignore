@@ -1,0 +1,106 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+.idea/*
+**/.idea/*
+!.idea/fileTemplates/
+
+# Auto generate files for string localization
+/lib/generated/*
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Web related
+#lib/generated_plugin_registrant.dart
+
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# Additional
+#get_flamingo_flutter.iml
+**/**/android/build/
+#**/**/android/get_flamingo_flutter_android.iml
+**/**/android/local.properties
+**/**/ios/Pods
+**/**/ios/*.app.dSYM.zip
+**/**/ios/*.ipa
+**/**/ios/Podfile.lock
+**/**/ios/Flutter/flutter_export_environment.sh
+**/**/ios/Flutter/Generated.xcconfig
+**/**/ios/Runner.xcworkspace/xcuserdata
+**/**/ios/Runner.xcodeproj/xcuserdata
+**/ios/ArkanaKeys/
+.gradle
+Gemfile.lock
+drafts/
+logs/
+
+**/*.chopper.dart
+**/*.patch
+ios/Flutter/.last_build_id
+**/*.apk
+**/*.aab
+**/*.ipa
+**/*.dSYM.zip
+**/*.cer
+fastlane/report.xml
+ios/fastlane/screenshots
+android/fastlane/metadata
+**/pubspec.lock
+**/*.mobileprovision
+*.env
+**/env.g.dart
+
+#Uncommented below if we need to add amplify to gitignore
+
+amplify-do-not-edit-begin
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/logs
+amplify/mock-data
+amplify/mock-api-resources
+amplify/backend/amplify-meta.json
+amplify/backend/.temp
+build/
+dist/
+node_modules/
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+amplifyconfiguration.dart
+amplify-build-config.json
+amplify-gradle-config.json
+amplifytools.xcconfig
+.secret-*
+**.sample
+amplify-do-not-edit-end
+/ios/build/
+**/dgph
+/.fvm/
+/devtools_options.yaml
